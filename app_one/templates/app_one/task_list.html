@@ -1,0 +1,18 @@
+
+<a href="{% url 'app_one:create_task' %}">Create Task</a><br>
+<ol>
+{% for task in task_list %}
+    <li>
+        <a href="{% url 'app_one:update_task' task.id %}"># Task{{task.id}}</a>
+        <a href="{% url 'app_one:delete_task' task.id %}">Delete {{task.work_name}}</a>
+        <ul>
+            <li>{{task.work_name}}</li>
+            <li>{{task.starting_date}}</li>
+            <li>{{task.ending_date}}</li>
+            <li>{{task.work_status}}</li>
+        </ul>    
+    </li>
+{% empty %}
+    <i>There is no task to do</i>
+{% endfor %}
+</ol>

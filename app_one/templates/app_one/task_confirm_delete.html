@@ -1,0 +1,6 @@
+Are you sure to delete {{task.work_name}}
+<form method="POST">
+    {% csrf_token %}
+    <input type='submit' value='Delete'></input>
+    <a href="{% url 'app_one:task_list' %}">Cancel</a>
+</form>
